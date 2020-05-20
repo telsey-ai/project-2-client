@@ -1,1 +1,22 @@
 @import '~bootstrap/scss/bootstrap';
+
+#authenticated {
+  display: none;
+}
+
+// #collection {
+//   display: none;
+// }
+
+.box {
+  background-color: grey;
+  border: black solid;
+}
+
+.failure {
+  color: red;
+}
+
+.success {
+  color: green;
+}
