@@ -2,7 +2,7 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://git.heroku.com/radiant-refuge-43345.git',
+  production: 'https://radiant-refuge-43345.herokuapp.com',
   development: 'http://localhost:4741'
 }
 
