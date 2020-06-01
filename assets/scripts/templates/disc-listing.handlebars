@@ -1,0 +1,20 @@
+{{#each discs as |disc|}}
+  {{log disc}}
+  <section data-id="{{disc.id}}">
+    <h6>Title:</h6>
+    <h3>
+      {{limit disc.make 45}}
+    </h2>
+    <h6>Make:</h6>
+    <p>
+      {{#if book.author}}
+        {{book.author}}
+      {{else}}
+        No author provided.
+      {{/if}}
+    </p>
+    <button type="submit" class="btn btn-danger delete-book">Remove</button>
+    <!-- {{> partial}} -->
+  </section>
+
+{{/each}}

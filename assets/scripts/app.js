@@ -12,8 +12,11 @@ $(() => {
   // your JS code goes here
   $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
   $('#quick-in').on('click', authEvents.onQuickIn)
 
   $('#create-disc').on('submit', discEvents.onCreateDisc)
   $('#get-discs').on('click', discEvents.onGetDiscs)
+  $('#collection').on('click', '.delete-disc', discEvents.onDeleteDisc)
+  $('#collection').on('submit', '.update-disc', discEvents.onUpdateDisc)
 })
