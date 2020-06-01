@@ -30,13 +30,22 @@ const createDiscSuccess = function () {
       }
 
       $('#collection').html(bag)
+      $('#message').text('Created Disc!')
+      $('#message').removeClass()
+      $('#message').addClass('success')
       $('form').trigger('reset')
     })
     .catch(console.error)
 }
 
 const createDiscFailure = function () {
+  $('#message').text('Create Disc Failed!')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  // console.log(`signInFailure ran. Error is:`, error)
 
+  // reset form:
+  $('form').trigger('reset')
 }
 
 const updateDiscSuccess = function () {
@@ -59,20 +68,34 @@ const updateDiscSuccess = function () {
         bag = bag + '<input required type="text" name="disc[make]" placeholder="Disc Brand">'
         bag = bag + '<input required type="text" name="disc[model]" placeholder="Disc Model">'
         bag = bag + '<input required type="text" name="disc[weight]" placeholder="Disc Weight">'
-        bag = bag + '<button type="submit" class="btn btn-secondary update-disc">Upate</button>'
+        bag = bag + '<button type="submit" class="btn btn-secondary update-disc">Update</button>'
         bag = bag + '</form>'
         bag = bag + '<button type="submit" class="btn btn-danger delete-disc">Remove</button>'
         bag = bag + '</section>' + `<br />`
       }
 
       $('#collection').html(bag)
+      $('#message').text('Disc updated successfully!')
+      $('#message').removeClass()
+      $('#message').addClass('success')
       $('form').trigger('reset')
     })
     .catch(console.error)
 }
 
+const updateDiscFailure = function () {
+  $('#message').text('Update Disc Failed!')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+  // console.log(`signInFailure ran. Error is:`, error)
+
+  // reset form:
+  $('form').trigger('reset')
+}
+
 module.exports = {
   createDiscSuccess,
   createDiscFailure,
-  updateDiscSuccess
+  updateDiscSuccess,
+  updateDiscFailure
 }

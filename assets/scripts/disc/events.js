@@ -55,6 +55,9 @@ const onDeleteDisc = (event) => {
       }
 
       $('#collection').html(bag)
+      $('#message').text('Deleted Disc successfully!')
+      $('#message').removeClass()
+      $('#message').addClass('success')
     })
     .catch(ui.failure)
 }
@@ -73,11 +76,11 @@ const onUpdateDisc = (event) => {
     }
   }
   data.disc._id = discId
-  api.deleteDisc(data)
-    .then(() => api.createDisc(formData))
+  api.createDisc(formData)
+    .then(() => api.deleteDisc(formData))
     .then(() => onGetDiscs(event))
     .then(ui.updateDiscSuccess)
-    .catch(ui.failure)
+    .catch(ui.updateDiscFailure)
 }
 
 module.exports = {
