@@ -77,7 +77,7 @@ const onUpdateDisc = (event) => {
   }
   data.disc._id = discId
   api.createDisc(formData)
-    .then(() => api.deleteDisc(formData))
+    .then(() => api.deleteDisc(data))
     .then(() => onGetDiscs(event))
     .then(ui.updateDiscSuccess)
     .catch(ui.updateDiscFailure)
